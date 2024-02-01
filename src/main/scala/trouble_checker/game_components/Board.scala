@@ -8,12 +8,24 @@ object Board {
     val rows = 11
     val cols = 11
     val cells = Array.ofDim[Cell](rows, cols)
+    val template = Array(Array(" ", " ", " ", " ", "[ ]", "[ ]", "[ ]", " ", " ", " ", " "), Array(" ", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", " "), Array(" ", "[ ]", " ", " ", " ", "[ ]", " ", " ", " ", "[ ]", " "), Array(" ", "[ ]", " ", " ", " ", "[ ]", " ", " ", " ", "[ ]", " "), Array("[ ]", "[ ]", " ", " ", " ", "[ ]", " ", " ", " ", "[ ]", "[ ]"), Array("[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]"), Array("[ ]", "[ ]", " ", " ", " ", "[ ]", " ", " ", " ", "[ ]", "[ ]"), Array(" ", "[ ]", " ", " ", " ", "[ ]", " ", " ", " ", "[ ]", " "), Array(" ", "[ ]", " ", " ", " ", "[ ]", " ", " ", " ", "[ ]", " "), Array(" ", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", "[ ]", " "), Array(" ", " ", " ", " ", "[ ]", "[ ]", "[ ]", " ", " ", " ", " "))
     for 
         i <- 0 until rows
         j <- 0 until cols 
-    do cells(i)(j) = new Cell
+    do
+        if template(i)(j) == " " then
+            cells(i)(j) = new Cell
+        else if template(i)(j) == "[ ]" then
+            cells(i)(j) = new Cell
+            cells(i)(j).placeToken(" ")
+            cells(i)(j).setType("empty")
 
     def show: String = {
-        val sb 
+        val sb = new mutable.StringBuilder("Board:\n")
+        for i <- 0 until rows do {
+            for j <- 0 until cols do sb ++= cells(i)(j).show
+            sb ++= "\n"
+        }
+        sb.toString
     }
 }

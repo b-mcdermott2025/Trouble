@@ -1,12 +1,12 @@
-val scala3Version = "3.3.1"
+val scala3Version = "3.3.0"
 
 lazy val root = project
   .in(file("."))
   .settings(
-    name := "TroubleMain",
+    name := "Trouble",
     version := "0.0.1",
 
     scalaVersion := scala3Version,
 
-    libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.10" % "test"
+    libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.16" % "test"
   )

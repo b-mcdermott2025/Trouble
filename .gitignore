@@ -1,0 +1,11 @@
+.bloop/
+.metals/
+.vscode/
+project
+target 
+.scalafmt.conf
+bin
+
+bookmark.txt
+IMG_3142.jpeg
+Trouble_board.svg.png
