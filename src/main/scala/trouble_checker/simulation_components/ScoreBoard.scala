@@ -5,14 +5,11 @@ object ScoreBoard {
     def show = {
         val sb = new StringBuilder("Scores (Number of pegs in finish):\n")
         for p <- PlayerOrder.toArray
-            do sb ++= p.name + " = " + p.score + ", "
+            do sb ++= p.getName + " = " + p.getScore + ", "
         
-            sb.delete(sb.toString.length - 2, sb.toString.length)
-            sb ++= "\n"
-
-            if PlayerOrder.current.score == 4
-                then sb ++= PlayerOrder.current.name + " Wins!\n"
+        sb.delete(sb.toString.length - 2, sb.toString.length)
+        sb ++= "\n"
             
-            sb.toString
+        sb.toString
     }
 }

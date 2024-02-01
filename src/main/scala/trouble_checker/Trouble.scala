@@ -6,7 +6,6 @@ object Password {
     def isValid(password : String) = false
     def showPlayerOrder = PlayerOrder.show
     def advancePlayerOrder = 
-        PlayerOrder.advance
         PlayerOrder.show
     def showGameArea = 
         Menu.showGameArea

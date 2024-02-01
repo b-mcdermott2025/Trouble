@@ -15,11 +15,14 @@ object PlayerOrder extends scala.collection.mutable.Queue[Player]{
 
   def show: String = {
     val sb = new StringBuilder("")
-    for p <- this.toArray yield sb ++= p.name + ", "
+    for p <- this.toArray yield sb ++= p.getName + ", "
     sb.toString.substring(0, sb.toString.length - 2)
   }
 
-  def current: Player = {
-    return this.head
+  def current: String = {
+    val sb = new StringBuilder("")
+    sb ++= "Current player: "
+    sb ++= this.head.getName
+    sb.toString
   }
 }

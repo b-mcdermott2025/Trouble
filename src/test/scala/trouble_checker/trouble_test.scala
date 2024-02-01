@@ -1,4 +1,4 @@
-package trouble_checker
+package simulation_components
 
 /*import org.scalatest.funspec.AnyFunSpec
 import org.scalatest.matchers.should._
@@ -29,13 +29,17 @@ class trouble_test extends AnyFunSpec with Matchers {
             //******* SHOW PLAYER ORDER *******
             it("can show the player order") {     
                 val expectedResult = "Blue, Purple, Red, Green"
-                Password.showPlayerOrder should be(expectedResult)  
+                Menu.showPlayerOrder should be(expectedResult)  
             }
 
             //******* ADVANCE ORDER *******
             it("can advance the player order") {     
                 val expectedResult = "Purple, Red, Green, Blue"
-                Password.advancePlayerOrder should be(expectedResult)  
+                Menu.advancePlayerOrder
+                Menu.showPlayerOrder should be(expectedResult)  
+                Menu.advancePlayerOrder
+                Menu.advancePlayerOrder
+                Menu.advancePlayerOrder
             }
             //******* SHOW GAME AREA *******
             it("can show the game area, including the 20 x 20 board, player scores, and tiles in each player's hand") {
@@ -59,7 +63,7 @@ class trouble_test extends AnyFunSpec with Matchers {
                     "\n" +
                     "Current player: Blue\n"
 
-                Password.showGameArea should be(expectedResult)
+                Menu.showGameArea should be(expectedResult)
             }
         }
     }

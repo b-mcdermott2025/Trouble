@@ -1,8 +1,6 @@
 package simulation_components
 
 import game_components.Board
-import simulation_components.PlayerOrder
-import simulation_components.ScoreBoard
 import scala.collection.mutable
 
 object Menu {
@@ -17,11 +15,11 @@ object Menu {
 
     //differences from gridmaster: Shows current player instead of TileTracker
     def showGameArea: String = {
-        val sb = mutable.StringBuilder()
+        val sb = new StringBuilder("")
         sb ++= Board.show + "\n"
         sb ++= ScoreBoard.show + "\n"
-        sb ++= PlayerOrder.current
-
+        sb ++= PlayerOrder.current + "\n"
+        
         sb.toString
     }
 }

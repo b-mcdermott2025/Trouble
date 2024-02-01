@@ -19,7 +19,7 @@ object Board {
             cells(i)(j) = new Cell
             cells(i)(j).placeToken(" ")
             cells(i)(j).setType("empty")
-
+            
     def show: String = {
         val sb = new mutable.StringBuilder("Board:\n")
         for i <- 0 until rows do {
