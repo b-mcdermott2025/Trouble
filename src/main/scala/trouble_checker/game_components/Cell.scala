@@ -2,8 +2,14 @@ package game_components
 
 //*******Cell*******
 class Cell {
-    var color = ""
-    var tyype = "none"
+    private var color = ""
+    private var tyype = "none"
+    def getColor: String = {
+      this.color
+    }
+    def getTyype: String = {
+      this.tyype
+    }
     def placeToken(token: String) = {
       this.color = token
     }
